@@ -1,5 +1,5 @@
 export interface IVentilador{
-    codigo: string;
+    //codigo: string;
     marca: string;
     modelo: string;
     rpm: number;

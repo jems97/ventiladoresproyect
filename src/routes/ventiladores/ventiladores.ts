@@ -40,7 +40,6 @@ router.get('/byid/:id', async (req, res)=>{
 router.post('/new', async (req, res) => {
   console.log("Ventiladores /new request body:", req.body);
   const {
-    codigo = "NA",
     marca ="Amazon Basics",
     modelo = "FS40-10BR",
     rpm ="300",
@@ -48,7 +47,6 @@ router.post('/new', async (req, res) => {
   } = req.body;
   //TODO: Validar Entrada de datos
   const newVentilador: IVentilador = {
-    codigo,
     marca,
     modelo,
     rpm,
@@ -69,7 +67,6 @@ router.put('/upd/:id', async (req, res) => {
     modelo="----NotRecieved------",
     rpm = "----NotRecieved------",
     precio = "",
-    codigo = "",
   } = req.body;
 
   if (
@@ -80,7 +77,6 @@ router.put('/upd/:id', async (req, res) => {
     return res.status(403).json({"error":"Debe venir el marca , modelo y rpm correctos"});
   }
   const UpdateVentilador : IVentilador = {
-    codigo,
     marca,
     modelo,
     rpm,
